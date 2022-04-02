@@ -279,3 +279,182 @@ main(void)
 
     return 0; 
     }  
+
+___________________________________________________________________________________________
+
+04 exercício 
+	
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main(){
+    float salarioAtual, bonus, reajuste, aux1, aux2;
+    int qtd;
+    
+    printf ("Informe quantos funcionarios a empresa possui \n");
+    scanf ("%d%*c", &qtd);
+    
+    for (int i=0; i<qtd; i++){   
+    printf("Informe o salario do funionario: \n");
+    scanf("%f%*c",&salarioAtual);
+
+    if ((salarioAtual >=0) && (salarioAtual <=500)){
+      aux1 = 150;
+      bonus = salarioAtual * 0.05;
+      reajuste = salarioAtual + bonus + aux1;
+      printf("Salario atual R$ %.2f \n", salarioAtual);
+      printf("Bonus obtido de 5 por cento R$ %.2f \n", bonus);
+      printf("Salario reajustado mais auxilio R$ %.2f \n", reajuste);
+
+    }else if ((salarioAtual > 500) && (salarioAtual <=1200)){
+      aux2 = 100;
+      bonus = salarioAtual * 0.12;
+      reajuste = salarioAtual + bonus + aux2;
+      printf("Salario atual R$ % .2f \n", salarioAtual);
+      printf("Bonus obtido de 12 por cento R$ %.2f \n", bonus);
+      printf("Salario reajustado mais auxilio R$ %.2f \n", reajuste);
+     
+    }else if (salarioAtual > 1200){
+      aux2 = 100;
+      reajuste = salarioAtual + aux2;
+      printf("Salario atual R$ % .2f \n", salarioAtual);
+      printf("Salario reajustado mais auxilio R$ %.2f \n", reajuste);
+    }
+}
+return 0;
+}
+
+_________________________________________________________________________________________________
+05 exercício
+
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+	
+	int i, qtd;
+	float notas[10];
+	float soma=0;
+	float media;
+	
+	printf ("Digite a quantidade de notas que serao digitadas \n");
+	scanf ("%d%*c", &qtd);
+	
+	for (i=0; i<qtd; i++){
+		printf ("Digite a nota numero %d \n", i+1);
+		scanf ("%f%*c", &notas[i]);
+		soma=soma+notas[i];
+	}
+	
+	media=soma/qtd;
+	printf ("%.2f eh o valor da media \n \n", media);
+	
+	for (i=0; i<qtd; i++){
+		if (notas[i]>media){
+			printf ("%.2f esta acima da media \n", notas[i]);
+		} else {}
+	}
+	
+	for (i=0; i<qtd; i++){
+	if (notas[i]<media){
+			printf ("%.2f esta abaixo da media \n", notas[i]);
+		}
+	}
+	return 0;
+}
+___________________________________________________________________________________________
+
+06 exercício
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+
+	char nome[30];
+	float vetornotas[10];
+	char vetornomes[10][30];
+	int i, qtdalunos=10;
+	float nota, media;
+	float total = 0;
+
+	printf ("Separar nomes compostos com underline '_' \n \n");
+	
+	for(i=0; i<qtdalunos; i++){
+    printf ("Digite o nome do aluno %d \n", i+1);
+	scanf("%s",vetornomes[i]);
+	printf("Informe a nota do aluno %d:\n", i+1);
+    scanf ("%f%*c", &nota);
+    vetornotas[i]=nota;
+    total=total+vetornotas[i];
+    }
+    media=total/qtdalunos;
+    printf("A media eh%.2f", media);
+
+    for (i=0; i<qtdalunos; i++){
+        if (vetornotas[i]>media){
+            printf("A nota do aluno %s esta acima da media \n",vetornomes[i]);
+        }
+    }
+
+    return 0;
+}
+
+_________________________________________________________________________________________________________
+
+07 exercício
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    int vetor[10];
+    
+	for (i=0; i<10; i++){
+    printf("Digite os numeros para o vetor \n");
+    scanf("%d%*c", &vetor[i]);
+    }
+    
+    for (j=9; j>=0; j--)
+    {
+        printf("%d \n", vetor[j]);
+    }
+    return 0;
+}
+______________________________________________________________________________________
+
+08 exercício
+
+#include <stdio.h>
+int main() 
+{
+    int i;
+    int tel[50];
+    char nome[100][50];
+    char buscanome[50];
+    
+    printf ("Nao repita nomes, ou use underline '_' para separa-los: \n");
+    printf ("Quantas pessoas serao cadastradas? \n");
+    scanf("%d", &i);
+    
+    for (int x=0; x<i; x++){
+        printf("Cadastre o nome da pessoa numero %d: \n", x+1);
+        scanf("%s%*c", nome[x]);
+        printf("Cadastre o telefone da pessoa numero %d: \n", x+1);
+        scanf("%d%*c", &tel[x]);
+    }
+    
+    printf ("REALIZACAO DE CONSULTA \n \n");
+    printf("DIGITE O NOME DO CLIENTE: \n");
+    scanf("%s", buscanome);
+    for (int x=0; x<i; x++){
+        if (strcmp(buscanome, nome[x])==0){
+		printf("Contato do cliente %s \n", buscanome);                                 
+        printf("Telefone -: %d\n", tel [x]);
+        } 
+	}
+    return 0;
+}
