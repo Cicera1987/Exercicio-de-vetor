@@ -224,7 +224,7 @@ int main(){
 }
 _________________________________________________________________________________________________
 
-03 exercício com If  else else if.
+03 exercício com if  else else if.
 
 /*Elaborar programa que lê dois números quaisquer e mostra na tela u
 indicando qual é o maior, ou se são iguais.*/
@@ -249,3 +249,33 @@ main(void)
 
     return 0;
 }
+
+_________________________________________________________________________________________________
+
+2° opção de modelo.
+	
+/*Elaborar programa que lê dois números quaisquer e mostra na tela uma mensage
+indicando qual é o maior, ou se são iguais.*/
+
+main(void)
+    {
+   float n1, n2;
+
+		printf("Digite o primeiro numero:\n ");
+			scanf("%d", &n1);
+		printf("Digite o segundo numero:\n ");
+			scanf("%d", &n2);
+
+        if((n1==n2))
+        	printf("Os numeros digitados sao iguais: \n");
+        
+        else if(n1 > n2)
+			printf("O Primeiro numero digitado eh o maior:\n ");	
+        else
+			printf("O Segundo numero digitado eh o maior:\n ");	
+		
+            printf("Thank you very much and see you next time. \n");
+            printf("___________________________________________\n");
+
+    return 0; 
+    }  
