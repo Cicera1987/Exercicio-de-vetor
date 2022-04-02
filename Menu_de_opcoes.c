@@ -1,4 +1,4 @@
-Exercício 01 - Menu de opçoes com swicth.
+01 Exercício - Menu de opçoes com swicth.
 	
 /*Faça um programa que :
 Tenha um menu com as seguintes funcionalidades;
@@ -139,4 +139,90 @@ return 0;
 
 }
 
+_____________________________________________________________________________
+	
+02 Exercicio com Array
+
+char texto[50], inverso[50], nome[50], aux, encerrar;
+int op;
+int i, l, j, f;
+int main(){
+
+    printf("Menu de Opcoes\n\n");
+    printf("1- Ordenar a palavra em ordem alfabetica\n");
+    printf("2- Substituir a ordem da palavra\n");
+    printf("3- Encerrar o programa\n");
+    scanf("%i%*c",&op);
+
+    switch (op){
+    case 1:
+
+        printf("Digite seu nome \n");
+        gets(nome);
+        aux = (strlen(nome));
+        printf("Letras ordenadas \n");
+        puts(nome);
+
+        for(int x = 0; x <= strlen(nome); x++){
+            for (int y = x +1; y <= strlen(nome); y++){
+	            if(nome[x] > nome[y] && nome[y] != '\0'){
+					char aux = nome[x];
+					nome[x] = nome[y];
+					nome[y] = aux;
+                }
+            }
+    }
+
+                printf(nome);
+                printf("\n\n Valeu!!!!!");
+
+                return 0;
+
+       break;
+
+    case 2:
+        printf("Digite o texto: O TRABALHO FACIL. \n");
+        gets(texto);
+        l = strlen(texto);
+        f=0;
+        j = l -  1;
+
+        for( int i = 0; i<l; i++){
+	    inverso[i] = texto[j];
+	    j = j - 1;
+        if(texto [i] == ' '){
+        texto[i] = '_';
+        }   
+        printf("%c", texto[i]);
+
+        }
+	    inverso[i] = '\0';
+
+        printf(" \n %s", inverso);
+        printf("\n\n Valeu!!!!!");
+
+        return 0;
+
+        break;
+
+    case 3:
+
+        printf(" \n Programa encerrado!");
+        gets(encerrar);
+    
+    return 0;
+
+
+        break;
+    default:
+
+        printf("opcao invalida!!!!\n");
+
+
+    return 0;
+    }
+}
+_________________________________________________________________________________________________
+
+03 exercício
 
