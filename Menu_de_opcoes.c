@@ -1,3 +1,5 @@
+Exercício 01 - Menu de opçoes com swicth.
+	
 /*Faça um programa que :
 Tenha um menu com as seguintes funcionalidades;
 1. Ler o vetor de 6 números inteiros
